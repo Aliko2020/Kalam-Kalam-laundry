@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
-import { CodeIcon, HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
+import { HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
+import { MdLocalLaundryService } from "react-icons/md";
+
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -12,11 +14,13 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-            <span>Kalam <span className="design">Kalam</span></span>
+            <MdLocalLaundryService />
+            <span>Kalam </span>
             {/* <i className="fas fa-code"></i> */}
-            <span className="icon">
+            {/* <span className="icon">
               <CodeIcon />
-            </span>
+            </span> */}
+            
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>

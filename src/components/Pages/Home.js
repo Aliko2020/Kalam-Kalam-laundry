@@ -20,6 +20,12 @@ export const Home = () => {
                 <a href="slide-3"></a>
             </div>
         </div>
+        <div className="hero-text">
+          <h1>Kalam Kalam Delivery Sevices</h1>
+          <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+""</p>
+
+        </div>
     </section>
     </>
   );

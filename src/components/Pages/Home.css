@@ -41,3 +41,21 @@
 .slider-nav a:hover{
     opacity: 1;
 }
+.hero-text{
+    margin: 0 auto;
+    max-width: 700px;
+    background: #F1F0E8;
+    position: relative;
+    padding:0.3rem;
+    border-radius: 5px;
+    bottom: 10rem;
+    
+}
+.hero-text h1{
+    padding: 0.5rem;
+    color: #FF5E0E;
+}
+
+.hero-text p{
+    color: black;
+}

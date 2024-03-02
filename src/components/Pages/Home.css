@@ -1,9 +1,12 @@
 .container{
-    padding: 0.2rem;
+    padding: .4rem;
+    
 }
 .slider-wrapper{
+
     position: relative;
-    max-width: 48rem;
+    max-width: 50rem;
+    height: 40vh;
     margin: 0 auto;
 }
 .slider{
@@ -48,14 +51,32 @@
     position: relative;
     padding:0.3rem;
     border-radius: 5px;
-    bottom: 10rem;
+    bottom: 5rem;
     
 }
 .hero-text h1{
-    padding: 0.5rem;
-    color: #FF5E0E;
+    padding: 1rem;
+    color: #316685;
 }
 
 .hero-text p{
     color: black;
 }
+ .hero-text button{
+    padding: .5rem 1rem;
+    margin: 5px 0 10px 0;
+    border: none;
+    background: #316685;
+    color: white;
+    border-radius: 3px;
+ }
+
+ .service-description{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    text-align: center;
+ }
+ .service-description h2{
+    margin: .7rem 0;
+ }

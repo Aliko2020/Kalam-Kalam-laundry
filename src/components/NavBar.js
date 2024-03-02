@@ -15,7 +15,7 @@ function NavBar() {
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
             <MdLocalLaundryService />
-            <span>Kalam </span>
+            <span>Savana </span>
             {/* <i className="fas fa-code"></i> */}
             {/* <span className="icon">
               <CodeIcon />

@@ -96,4 +96,33 @@
         display: none;
         max-width:250px;
     }
+    .how-it-works{
+        position: relative;
+        top: 10rem;
+    }
+    .how-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .how-it-works .how-box{
+        max-width: 220px;
+      }
   }
+
+  .how-it-works{
+    padding: 0.5rem;
+  }
+  .how-it-works .how-box{
+    padding: 1.5rem;
+    border-radius: 5px;
+    background: #F1F0E8;
+    margin: 1.5rem 0.5rem;
+  }
+  .how-box h3{
+    
+    margin: 1rem 0 0.5rem 0;
+  }
+.primary-color{
+    color: #FF5E0E;
+}

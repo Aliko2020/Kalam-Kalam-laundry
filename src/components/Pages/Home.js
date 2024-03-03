@@ -3,6 +3,10 @@ import '../Pages/Home.css'
 import image1 from '../images/image1.jpg';
 import image7 from '../images/image7.jpg'
 import image4 from '../images/image4.jpg';
+import PNG1 from '../images/Mask-Group-41.png';
+import PNG2 from '../images/Mask-Group-42.png';
+import PNG3 from '../images/Mask-Group-43.png';
+import PNG4 from '../images/Group-218.png';
 
 
 
@@ -37,6 +41,32 @@ export const Home = () => {
         </div>
         
       </div>
+    </section>
+    <section className="how-it-works">
+      <h1>HOW IT WORKS: IN 4 EASY STEPS</h1>
+      <div className="how-container">
+          <div className="how-box">
+            <img src={PNG1} alt="" />
+            <h3>Step 1</h3>
+            <p><span className="primary-color">You Bag up</span> all your dirty clothes</p>
+          </div>
+          <div className="how-box">
+            <img src={PNG2} alt="" />
+            <h3>Step 1</h3>
+            <p><span className="primary-color">We pick up</span> your dirty clothes</p>
+          </div>
+          <div className="how-box">
+            <img src={PNG3} alt="" />
+            <h3>Step 1</h3>
+            <p><span className="primary-color">We clean up</span> your dirty clothes</p>
+          </div>
+          <div className="how-box">
+            <img src={PNG4} alt="" />
+            <h3>Step 1</h3>
+            <p><span className="primary-color">We deliver</span> clean folded/ironed cloths</p>
+          </div>
+      </div>
+
     </section>
     </>
   );

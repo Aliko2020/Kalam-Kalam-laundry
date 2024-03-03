@@ -1,10 +1,10 @@
 import React from "react";
 import '../Pages/Home.css'
 import image1 from '../images/image1.jpg';
-import image2 from '../images/image2.jpg';
-import image3 from '../images/image3.png';
+import image7 from '../images/image7.jpg'
 import image4 from '../images/image4.jpg';
-import image5 from '../images/image5.jpg'
+
+
 
 export const Home = () => {
   return (
@@ -12,10 +12,7 @@ export const Home = () => {
       <section class="container">
         <div class="slider-wrapper">
             <div class="slider">
-                
                 <img id="slide-1" src={image1} alt="image1" />
-                <img id="slide-2" src={image3} alt="image2" />
-                <img id="slide-3" src={image2} alt="image3" />
             </div>
             <div class="slider-nav">
                 <a href="slide-1"></a>
@@ -31,13 +28,14 @@ export const Home = () => {
     </section>
     <section className="service-description">
       <h2>Your Laundry Experts</h2>
-      <div className="container">
-        <div>
+      <div className="service-container">
+      <div className="service-image">
+        <img src={image7} alt="washing machine" style={{width: "100%"}} />
+        </div>
+        <div className="service-text">
         <p>We call it “wash & fold” (some say “fluff & fold”), but it’s so much more. We take individual care of each of your machine washable laundry items – clothing, delicates, linens, blankets, comforters – you name it! Whites, colors, and delicates are separately washed and returned to you fresh, clean and neatly folded and hung on hangers.</p>
         </div>
-        <div>
-        <img src={image4} alt="washing machine" style={{width: "100%"}} />
-        </div>
+        
       </div>
     </section>
     </>

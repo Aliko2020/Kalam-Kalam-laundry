@@ -1,11 +1,10 @@
 .container{
-    padding: .4rem;
+    padding:.4rem;
     
 }
 .slider-wrapper{
-
     position: relative;
-    max-width: 50rem;
+    max-width: 60rem;
     height: 40vh;
     margin: 0 auto;
 }
@@ -33,17 +32,8 @@
     transform: translateX(-50%);
     z-index: 1;
 }
-.slider-nav a{
-    width: 0.7rem;
-    height: 0.7rem;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.75;
-    transition: opacity ease 250ms;
-}
-.slider-nav a:hover{
-    opacity: 1;
-}
+
+
 .hero-text{
     margin: 0 auto;
     max-width: 700px;
@@ -51,8 +41,7 @@
     position: relative;
     padding:0.3rem;
     border-radius: 5px;
-    bottom: 5rem;
-    
+    bottom: 5rem;   
 }
 .hero-text h1{
     padding: 1rem;
@@ -64,7 +53,7 @@
 }
  .hero-text button{
     padding: .5rem 1rem;
-    margin: 5px 0 10px 0;
+    margin: 1rem 0 10px 0;
     border: none;
     background: #316685;
     color: white;
@@ -72,11 +61,39 @@
  }
 
  .service-description{
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 1.5rem 1rem;
     text-align: center;
+    bottom: 5rem;
  }
+ 
  .service-description h2{
     margin: .7rem 0;
  }
+
+ .service-description p{
+    line-height: 1.8;
+ }
+
+ @media only screen and (min-width: 850px) {
+    .service-description {
+        position: relative;
+        top: 9rem;
+     }
+    .service-container{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+    
+    }
+    .service-text{
+        max-width:800px;
+    }
+    .service-image{
+        display: none;
+        max-width:250px;
+    }
+  }

@@ -18,7 +18,7 @@ export const Home = () => {
             <div class="slider">
                 <img id="slide-1" src={image1} alt="image1" />
             </div>
-            <div class="slider-nav">
+            <div className="slider-nav">
                 <a href="slide-1"></a>
                 <a href="slide-2"></a>
                 <a href="slide-3"></a>

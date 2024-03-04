@@ -118,11 +118,14 @@
     border-radius: 5px;
     background: #F1F0E8;
     margin: 1.5rem 0.5rem;
+    cursor: pointer;
+  }
+  .how-it-works .how-box:hover{
+    background: #F1F266;
   }
   .how-box h3{
-    
     margin: 1rem 0 0.5rem 0;
   }
-.primary-color{
+/* .primary-color{
     color: #FF5E0E;
-}
+} */

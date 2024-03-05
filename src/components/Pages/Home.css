@@ -36,7 +36,7 @@
 
 .hero-text{
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 600px;
     background: #F1F0E8;
     position: relative;
     padding:0.3rem;
@@ -49,15 +49,16 @@
 }
 
 .hero-text p{
-    color: black;
+    line-height: 1.5rem;
 }
- .hero-text button{
+ .btn-primary{
     padding: .5rem 1rem;
-    margin: 1rem 0 10px 0;
+    margin: 1rem 0;
     border: none;
-    background: #316685;
+    background: #ff3831;
     color: white;
     border-radius: 3px;
+    cursor: pointer;
  }
 
  .service-description{
@@ -80,7 +81,7 @@
  @media only screen and (min-width: 850px) {
     .service-description {
         position: relative;
-        top: 9rem;
+        top: 5rem;
      }
     .service-container{
         display: flex;
@@ -100,6 +101,9 @@
         position: relative;
         top: 10rem;
     }
+    .how-it-works h2{
+        margin: 1rem 0;
+    }
     .how-container{
         display: flex;
         flex-wrap: wrap;
@@ -108,24 +112,66 @@
     .how-it-works .how-box{
         max-width: 220px;
       }
+    .pick-up{
+        position: relative;
+        top: 7rem;
+        display: flex;
+        justify-content:center;
+        gap: 2rem;
+    }
+    .pick-up-image{
+        max-width: 900px;
+    }
+    .pick-up-box-two{
+        padding: 1rem;
+        max-width: 200px;
+        max-height: 300px;
+        position:relative;
+        right: 10rem;
+        top: 3rem;
+        border: 1px solid #ff3831;
+        border-radius: 25px;
+    }
+    .pick-up h2{
+        margin: 0;
+    }
   }
-
+.schedule-btn{
+    position: relative;
+    left: 50%;
+    right: 50%;
+    bottom: 80%;
+    background: #ff3831;
+}
   .how-it-works{
     padding: 0.5rem;
   }
   .how-it-works .how-box{
     padding: 1.5rem;
     border-radius: 5px;
-    background: #F1F0E8;
+    /* background: #F1F0E8; */
     margin: 1.5rem 0.5rem;
     cursor: pointer;
   }
   .how-it-works .how-box:hover{
-    background: #F1F266;
+    background: #F1F0E8;
   }
   .how-box h3{
     margin: 1rem 0 0.5rem 0;
   }
-/* .primary-color{
-    color: #FF5E0E;
-} */
+.primary{
+    color: #ff3831;
+}
+
+.pick-up{
+    margin: 2rem 0 1rem 0;
+    padding: 1rem;
+}
+.pick-up h2{
+    margin: 1.5rem 0;
+    text-align: left; 
+}
+.pick-up p{
+    line-height: 1.5;
+    text-align: center;
+}

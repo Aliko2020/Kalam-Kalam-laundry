@@ -12,7 +12,6 @@ function App() {
     <>
       <Router>
         <NavBar />
-
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -23,7 +22,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-      
+      <Footer />
   </>
   );
 }

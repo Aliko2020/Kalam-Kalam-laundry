@@ -79,13 +79,13 @@
 
 .nav-item:hover:after {
   width: 100%;
-  background: #FF5E0E;
+  background: #ff3831;
 }
 
 .nav-item .active {
   color: #FFFFFF;
   border: 1px solid #FF5E0E;
-  background: #FF5E0E;
+  background: #ff3831;
 }
 
 .nav-icon {

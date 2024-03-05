@@ -7,6 +7,7 @@ import { Blog } from "./components/Pages/Blog";
 import { Contact } from "./components/Pages/Contact";
 import { Footer } from "./components/Footer";
 import { Pagenotfound } from "./components/Pages/Pagenotfound";
+import { Login } from "./components/Pages/Login";
 function App() {
   return (
     <>
@@ -18,11 +19,12 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<Pagenotfound />} />
           </Routes>
         </div>
       </Router>
-      <Footer />
+      {/* <Footer /> */}
   </>
   );
 }

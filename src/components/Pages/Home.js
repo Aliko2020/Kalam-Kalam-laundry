@@ -7,7 +7,8 @@ import PNG1 from '../images/Mask-Group-41.png';
 import PNG2 from '../images/Mask-Group-42.png';
 import PNG3 from '../images/Mask-Group-43.png';
 import PNG4 from '../images/Group-218.png';
-import Pickup from '../images/pickup.jpg'
+import Pickup from '../images/pickup.jpg';
+import image2 from '../images/image2.jpg'
 
 
 
@@ -32,11 +33,11 @@ export const Home = () => {
         </div>
     </section>
     <section className="service-description">
-      <h2>Laundry Experts</h2>
       <div className="service-container">
-      <div className="service-image">
-        <img src={image7} alt="washing machine" style={{width: "100%"}} />
+        <div className="service-image">
+        <img src={image2} alt="washing machine" style={{width: "100%"}} />
         </div>
+        <h2>Laundry Experts</h2>
         <div className="service-text">
         <p>We call it “wash & fold” (some say “fluff & fold”), but it’s so much more. We take individual care of each of your machine washable laundry items – clothing, delicates, linens, blankets, comforters – you name it! Whites, colors, and delicates are separately washed and returned to you fresh, clean and neatly folded and hung on hangers.</p>
         </div>

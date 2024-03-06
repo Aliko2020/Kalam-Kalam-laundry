@@ -1,9 +1,27 @@
 import React from 'react'
 import googleimg from '../images/icons8-google-48.png'
+import { useEffect } from 'react';
+import { jwtDecode } from 'jwt-decode'
 
 
 
 export const Login = (props) => {
+    function handleCallbackResponse(response){
+        console.log("Encoded jwt: "  + response.credential);
+        var userObject = jwtDecode(response.credential)
+        console.log(userObject);
+    }
+    useEffect(()=>{
+        /*global google  */
+        google.accounts.id.initialize({
+            client_id: "349447172569-5182u2e5bvqcf4b9jqq9da3sbggqr6h0.apps.googleusercontent.com",
+            callback: handleCallbackResponse
+        })
+        google.accounts.id.renderButton(
+            document.getElementById("signInDiv"),
+            { theme: "outline", size: "large"}
+        )
+    },[])
 
     const container = {
         display: "flex",
@@ -13,7 +31,7 @@ export const Login = (props) => {
         
     }
     const handleClick =(event)=>{
-        setUserInput(event.target.value)
+        
         
     }
     const handSubmit = (event)=>{
@@ -27,24 +45,12 @@ export const Login = (props) => {
         <div className={container}>
             <h1 style={{margin: '2rem 0'}}
             >Log in</h1>
-            <div style={{
+            <div id='signInDiv' style={{
                 display: "flex",
                 justifyContent: 'center',
                 margin: '1rem 0',
                 }}>
-                <p style={
-                    {
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems : 'center',
-                        gap: '5px',
-                        width: '350px',
-                        border: '1px solid black',
-                        borderRadius: '5px',
-                        padding: '.1rem'
-                        
-                    }
-                }><img src={googleimg} alt='google' /> Google</p>
+                
             </div>
             <p>OR</p>
             <div style={{

@@ -8,7 +8,15 @@ import { Contact } from "./components/Pages/Contact";
 import { Footer } from "./components/Footer";
 import { Pagenotfound } from "./components/Pages/Pagenotfound";
 import { Login } from "./components/Pages/Login";
+import { useState } from "react";
+
+
+
+
 function App() {
+  const [isLogin, setIsLogin] = useState(false)
+
+
   return (
     <>
       <Router>
@@ -19,12 +27,11 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login isLogin={isLogin} />} />
             <Route path="*" element={<Pagenotfound />} />
           </Routes>
         </div>
       </Router>
-      {/* <Footer /> */}
   </>
   );
 }

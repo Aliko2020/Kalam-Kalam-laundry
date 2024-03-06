@@ -1,27 +1,31 @@
 import React from 'react'
 import googleimg from '../images/icons8-google-48.png'
 
-export const Login = () => {
+
+
+export const Login = (props) => {
+
     const container = {
         display: "flex",
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '1rem',
+        padding: '.5rem',
         
     }
-    
-    
+    const handleClick =(event)=>{
+        setUserInput(event.target.value)
+        
+    }
+    const handSubmit = (event)=>{
+        event.preventDefault();
+        event.target.value = ""
+    }
+     
   return (
     <div >
-    <form style={{
-        
-    
-    }}>
+        <form style={{}}>
         <div className={container}>
-            <h1
-                style={{
-                    margin: '2rem 0'
-                }}
+            <h1 style={{margin: '2rem 0'}}
             >Log in</h1>
             <div style={{
                 display: "flex",
@@ -34,10 +38,10 @@ export const Login = () => {
                         justifyContent: 'center',
                         alignItems : 'center',
                         gap: '5px',
-                        width: '380px',
+                        width: '350px',
                         border: '1px solid black',
                         borderRadius: '5px',
-                        padding: '.3rem'
+                        padding: '.1rem'
                         
                     }
                 }><img src={googleimg} alt='google' /> Google</p>
@@ -49,7 +53,7 @@ export const Login = () => {
                 justifyContent: 'center',
                 margin: '0.5rem 0 1rem 0',
                 padding: '1rem',
-                width: '380px',
+                width: '360px',
                 margin: 'auto'
             }}>
                 <input 
@@ -58,7 +62,8 @@ export const Login = () => {
                         borderRadius: '5px',
                     }}
                     type='text' 
-                    placeholder='Email or username' 
+                    placeholder='Email or username'
+                    onChange={handleClick} 
 
                 />
                 <input 
@@ -68,7 +73,8 @@ export const Login = () => {
                         margin: '1.5rem 0'
                     }}
                     type='password' 
-                    placeholder='Password' 
+                    placeholder='Password'
+                    onChange={handleClick}  
                     
                 />
                 <button
@@ -81,11 +87,13 @@ export const Login = () => {
                         color: 'white',
                         fontSize: '1.5rem'
                     }}
+                    onClick={handSubmit}
                 >login</button>
             </div>
             <p>Dont have an account? Sign up</p>
         </div>
     </form>
+    
     </div>
   )
 }

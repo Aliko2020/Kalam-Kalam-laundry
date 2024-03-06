@@ -9,6 +9,7 @@ import PNG3 from '../images/Mask-Group-43.png';
 import PNG4 from '../images/Group-218.png';
 import Pickup from '../images/pickup.jpg';
 import image2 from '../images/image2.jpg'
+import { Link } from "react-router-dom";
 
 
 
@@ -29,7 +30,7 @@ export const Home = () => {
         <div className="hero-text">
           <h1 >kalam kalam Laundry.</h1>
           <p>We are a laundry service at your door step, now in Bolgatanga and its sourounding.</p>
-          <button className="btn-primary">Get Started</button>
+          <button className="btn-primary"><Link to="/login" >Get Started</Link></button>
         </div>
     </section>
     <section className="service-description">
@@ -74,7 +75,7 @@ export const Home = () => {
         <img className="pick-up-image" src={Pickup} style={{width:"100%"}}  alt="biker on a motobike" />
       </div>
       <div className="pick-up-box-two">
-        <button className="btn-primary">schedule Pickup</button>
+        <Link className="btn-primary" to='/login'>schedule Pickup</Link>
         <p>scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
         
       </div>

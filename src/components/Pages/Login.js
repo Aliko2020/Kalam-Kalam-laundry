@@ -1,5 +1,4 @@
-import React from 'react'
-import googleimg from '../images/icons8-google-48.png'
+import React from 'react';
 import { useEffect } from 'react';
 import { jwtDecode } from 'jwt-decode'
 

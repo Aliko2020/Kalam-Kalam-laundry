@@ -1,11 +1,36 @@
-import React from 'react'
-import googleimg from '../images/icons8-google-48.png'
-import { useEffect } from 'react';
-import { jwtDecode } from 'jwt-decode'
+import React from 'react';
+import { useEffect,useState } from 'react';
+import { jwtDecode } from 'jwt-decode' 
+import { Spinner } from './Spinner';
+import { Dashboard } from './Dashboard';
+
 
 
 
 export const Login = (props) => {
+
+    
+    const [userData,setUserData] = useState()
+
+    function handleCallbackRequest(response){
+        
+        const r_data = jwtDecode(response.credential)
+        setUserData(r_data)
+        
+
+    }
+    
+    useEffect(()=>{
+      /* global google */
+      google.accounts.id.initialize({
+        client_id: "143512455333-tfp65lehblgu0lbn5f95ep58mqte42cf.apps.googleusercontent.com",
+        callback: handleCallbackRequest
+      });
+      google.accounts.id.renderButton(
+        document.getElementById('signInDiv'),
+        {theme: "outline", size: "large"}
+      );
+    },[])
 
     const container = {
         display: "flex",
@@ -15,7 +40,7 @@ export const Login = (props) => {
         
     }
     const handleClick =(event)=>{
-        setUserInput(event.target.value)
+        
         
     }
     const handSubmit = (event)=>{
@@ -25,36 +50,18 @@ export const Login = (props) => {
      
   return (
     <div >
-        <form style={{}}>
+       {userData ? <Dashboard userData={userData} /> :  <form style={{}}>
+        
         <div className={container}>
-            <h1 style={{margin: '2rem 0'}}
-            >Log in</h1>
-            <div style={{
-                display: "flex",
-                justifyContent: 'center',
-                margin: '1rem 0',
-                }}>
-                <p style={
-                    {
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems : 'center',
-                        gap: '5px',
-                        width: '350px',
-                        border: '1px solid black',
-                        borderRadius: '5px',
-                        padding: '.1rem'
-                        
-                    }
-                }><img src={googleimg} alt='google' /> Google</p>
-            </div>
+        <div style={{display:'flex',justifyContent:'center'}} id='signInDiv'>
+
+        </div>
             <p>OR</p>
             <div style={{
                 display: "flex",
                 flexDirection: 'column',
                 justifyContent: 'center',
                 margin: '0.5rem 0 1rem 0',
-                padding: '1rem',
                 width: '360px',
                 margin: 'auto'
             }}>
@@ -94,7 +101,7 @@ export const Login = (props) => {
             </div>
             <p>Dont have an account? Sign up</p>
         </div>
-    </form>
+    </form>}
     
     </div>
   )

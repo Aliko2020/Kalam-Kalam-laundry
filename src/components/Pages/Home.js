@@ -36,7 +36,7 @@ export const Home = () => {
     <section className="service-description">
       <div className="service-container">
         <div className="service-image">
-        <img src={image2} alt="washing machine" style={{width: "100%"}} />
+        {/* <img src={image2} alt="washing machine" style={{width: "100%"}} /> */}
         </div>
         <h2>Laundry Experts</h2>
         <div className="service-text">

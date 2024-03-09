@@ -31,7 +31,7 @@ export const Login = (props) => {
         {theme: "outline", size: "large"}
       );
     },[])
-
+    console.log(userData);
     const container = {
         display: "flex",
         justifyContent: 'center',

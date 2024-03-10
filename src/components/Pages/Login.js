@@ -20,14 +20,14 @@
         const handleSubmit = (event) =>{
             event.preventDefault();
             setErrors(Validation(values)) 
-            console.log(values);
+            setValues({email: "", password: ""})
+            
+            
         }
 
         
-        const handleInput =(event)=>{
-
-            setValues(prev=>({...prev,[event.target.name] : [event.target.value]}))
-
+        const handleInput = (event) => {
+            setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
         }
         
         const container = {
@@ -48,7 +48,6 @@
                     flexDirection: 'column',
                     justifyContent: 'center',
                     textAlign: 'left',
-                    margin: '0.5rem 0 1rem 0',
                     width: '360px',
                     margin: 'auto'
                 }}>
@@ -60,13 +59,15 @@
                             borderRadius: '5px',
                             margin: '1rem 0'
                         }}
+                        id='username'
                         name='email'
+                        value={values.email}
                         type='text' 
                         placeholder='johndoe@gmail.com'
                         onChange={handleInput} 
 
                     />
-                    {errors.email && <span style={{color: 'red',margin:'.5rem 0 1rem 0'}}>{errors.email}</span>}
+                    {errors.email && <span style={{color: 'red',margin:'.5rem 0 1rem 0',fontSize:'.8rem'}}>{errors.email}</span>}
                     <label htmlFor='password'><strong>Password</strong></label>
                     <input 
                         style={{
@@ -74,13 +75,15 @@
                             borderRadius: '5px',
                             margin: '1rem 0'
                         }}
+                        id='password'
+                        value={values.password}
                         type='password' 
                         name='password'
                         placeholder='Password'
                         onChange={handleInput}  
                         
                     />
-                    {errors.password && <span style={{color: 'red',margin:'.5rem 0'}}>{errors.password}</span>}
+                    {errors.password && <span style={{color: 'red',margin:'.5rem 0',fontSize:'.8rem'}}>{errors.password}</span>}
                     <button
                         style={{
                             padding: '1.2rem',
@@ -95,7 +98,7 @@
                     >login</button>
                 </div>
                 <p style={{margin: '1rem'}}>Dont have an account?</p>
-                <Link to="/signup" >Sign up</Link>
+                <Link style={{color:"#ff3831"}} to="/signup" >Sign up</Link>
             </div>
         </form>
         </div>

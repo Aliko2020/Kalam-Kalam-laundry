@@ -1,7 +1,8 @@
     import React from 'react'
     import { useState } from 'react'
     import { Link } from 'react-router-dom'
-    import ValidationSignup from '../LoginValidate'
+    import ValidationSignup from '../LoginValidate';
+    import axios from 'axios';
 
 
 
@@ -17,13 +18,26 @@
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        setErrors(ValidationSignup(values)) 
-        console.log(values);
-    }
+        setErrors(ValidationSignup(values));
 
+        axios.post('http://localhost:8080/signup',values)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        
+        // if(errors.name === "" && errors.email ==="" && errors.password === ""){
+            
+            
+        // }
+        setValues({
+            username: "",
+            email: "",
+            password: ""
+        })
+    }
+    
 
     const handleInput =(event)=>{
-      setValues(prev=>({...prev,[event.target.name] : [event.target.value]}))
+      setValues(prev=>({...prev,[event.target.name] : event.target.value}))
 
     }
       
@@ -58,6 +72,7 @@
                             borderRadius: '5px',
                             margin: '1rem 0'
                         }}
+                        value={values.username}
                         name='username'
                         type='text' 
                         placeholder='John Doe'
@@ -72,13 +87,14 @@
                                 borderRadius: '5px',
                                 margin: '1rem 0'
                             }}
+                            value={values.email}
                             name='email'
                             type='text' 
                             placeholder='johndoe@gmail.com'
                             onChange={handleInput} 
 
                         />
-                    {errors.email && <span style={{color: 'red',margin:'.5rem 0 1rem 0'}}>{errors.email}</span>}
+                    {errors.email && <span style={{color: 'red',margin:'.5rem 0 1rem 0',fontSize:'.8rem'}}>{errors.email}</span>}
                     
                     <label htmlFor='password'><strong>Password</strong></label>
                     <input 
@@ -89,11 +105,12 @@
                         }}
                         type='password' 
                         name='password'
+                        value={values.password}
                         placeholder='Password'
                         onChange={handleInput}  
                         
                     />
-                    {errors.password && <span style={{color: 'red',margin:'.5rem 0 1rem 0'}}>{errors.password}</span>}
+                    {errors.password && <span style={{color:'red',margin:'.5rem 0 1rem 0',fontSize:'.8rem'}}>{errors.password}</span>}
                     <button
                         type='submit'
                         style={{
@@ -108,7 +125,7 @@
                     >Sign Up</button>
                 </div>
                 <p style={{margin: '1rem'}}>already have an account?</p>
-                <Link  to="/login" >Sign in</Link>
+                <Link  style={{color:"#ff3831"}} to="/login" >Sign in</Link>
             </div>
         </form>
         </div>

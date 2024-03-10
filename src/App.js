@@ -5,7 +5,6 @@ import { Home } from "./components/Pages/Home";
 import { About } from "./components/Pages/About";
 import { Blog } from "./components/Pages/Blog";
 import { Contact } from "./components/Pages/Contact";
-import { Footer } from "./components/Footer";
 import { Pagenotfound } from "./components/Pages/Pagenotfound";
 import { Login } from "./components/Pages/Login";
 import { SignUp } from "./components/Pages/SignUp";

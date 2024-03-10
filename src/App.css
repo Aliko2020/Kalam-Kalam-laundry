@@ -31,3 +31,8 @@ body {
   animation:l4 1s infinite steps(10);
 }
 @keyframes l4 {to{transform: rotate(1turn)}}
+
+a{
+  text-decoration: none;
+  color: white;
+}

@@ -1,108 +1,103 @@
-import React from 'react';
-import { useEffect,useState } from 'react';
-import { jwtDecode } from 'jwt-decode' 
-import { Spinner } from './Spinner';
-import { Dashboard } from './Dashboard';
+    import React from 'react';
+    import { Link } from 'react-router-dom';
+    import { useState } from 'react';
+    import Validation from '../LoginValidate'
 
 
 
 
-export const Login = (props) => {
 
-    
-    const [userData,setUserData] = useState()
 
-    function handleCallbackRequest(response){
+    export const Login = () => {
+
+        const [values, setValues] = useState({
+            email: "",
+            password: ""
+        })
         
-        const r_data = jwtDecode(response.credential)
-        setUserData(r_data)
-        
+        const [errors, setErrors] = useState({})
 
-    }
-    
-    useEffect(()=>{
-      /* global google */
-      google.accounts.id.initialize({
-        client_id: "143512455333-tfp65lehblgu0lbn5f95ep58mqte42cf.apps.googleusercontent.com",
-        callback: handleCallbackRequest
-      });
-      google.accounts.id.renderButton(
-        document.getElementById('signInDiv'),
-        {theme: "outline", size: "large"}
-      );
-    },[])
-    console.log(userData);
-    const container = {
-        display: "flex",
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '.5rem',
-        
-    }
-    const handleClick =(event)=>{
-        
-        
-    }
-    const handSubmit = (event)=>{
-        event.preventDefault();
-        event.target.value = ""
-    }
-     
-  return (
-    <div >
-       {userData ? <Dashboard userData={userData} /> :  <form style={{}}>
-        
-        <div className={container}>
-        <div style={{display:'flex',justifyContent:'center'}} id='signInDiv'>
+        const handleSubmit = (event) =>{
+            event.preventDefault();
+            setErrors(Validation(values)) 
+            console.log(values);
+        }
 
-        </div>
-            <p>OR</p>
-            <div style={{
-                display: "flex",
-                flexDirection: 'column',
-                justifyContent: 'center',
-                margin: '0.5rem 0 1rem 0',
-                width: '360px',
-                margin: 'auto'
-            }}>
-                <input 
-                    style={{
-                        padding: '1.2rem',
-                        borderRadius: '5px',
-                    }}
-                    type='text' 
-                    placeholder='Email or username'
-                    onChange={handleClick} 
+        
+        const handleInput =(event)=>{
 
-                />
-                <input 
-                    style={{
-                        padding: '1.2rem',
-                        borderRadius: '5px',
-                        margin: '1.5rem 0'
-                    }}
-                    type='password' 
-                    placeholder='Password'
-                    onChange={handleClick}  
-                    
-                />
-                <button
-                    style={{
-                        padding: '1.2rem',
-                        borderRadius: '5px',
-                        margin: '1rem 0',
-                        background: '#ff3831',
-                        border: 'none',
-                        color: 'white',
-                        fontSize: '1.5rem'
-                    }}
-                    onClick={handSubmit}
-                >login</button>
+            setValues(prev=>({...prev,[event.target.name] : [event.target.value]}))
+
+        }
+        
+        const container = {
+            display: "flex",
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '.5rem',
+        }
+    return (
+        <div >
+        <form onSubmit={handleSubmit}>
+            <div className={container}>
+            <div style={{display:'flex',justifyContent:'center'}} id='signInDiv'>
+
             </div>
-            <p>Dont have an account? Sign up</p>
+                <div style={{
+                    display: "flex",
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    textAlign: 'left',
+                    margin: '0.5rem 0 1rem 0',
+                    width: '360px',
+                    margin: 'auto'
+                }}>
+                    <h1 style={{textAlign:'center',margin:'1rem'}}>Sign-In</h1>
+                    <label htmlFor='username'><strong>Email</strong></label>
+                    <input 
+                        style={{
+                            padding: '1.2rem .2rem',
+                            borderRadius: '5px',
+                            margin: '1rem 0'
+                        }}
+                        name='email'
+                        type='text' 
+                        placeholder='johndoe@gmail.com'
+                        onChange={handleInput} 
+
+                    />
+                    {errors.email && <span style={{color: 'red',margin:'.5rem 0 1rem 0'}}>{errors.email}</span>}
+                    <label htmlFor='password'><strong>Password</strong></label>
+                    <input 
+                        style={{
+                            padding: '1.2rem .2rem',
+                            borderRadius: '5px',
+                            margin: '1rem 0'
+                        }}
+                        type='password' 
+                        name='password'
+                        placeholder='Password'
+                        onChange={handleInput}  
+                        
+                    />
+                    {errors.password && <span style={{color: 'red',margin:'.5rem 0'}}>{errors.password}</span>}
+                    <button
+                        style={{
+                            padding: '1.2rem',
+                            borderRadius: '5px',
+                            margin: '1rem 0',
+                            background: '#ff3831',
+                            border: 'none',
+                            color: 'white',
+                            fontSize: '1.5rem'
+                        }}
+                        type='submit'
+                    >login</button>
+                </div>
+                <p style={{margin: '1rem'}}>Dont have an account?</p>
+                <Link to="/signup" >Sign up</Link>
+            </div>
+        </form>
         </div>
-    </form>}
-    
-    </div>
-  )
-}
+    )
+    }

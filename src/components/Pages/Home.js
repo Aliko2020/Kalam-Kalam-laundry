@@ -34,16 +34,10 @@ export const Home = () => {
         </div>
     </section>
     <section className="service-description">
-      <div className="service-container">
-        <div className="service-image">
-        {/* <img src={image2} alt="washing machine" style={{width: "100%"}} /> */}
-        </div>
         <h2>Laundry Experts</h2>
         <div className="service-text">
         <p>We call it “wash & fold” (some say “fluff & fold”), but it’s so much more. We take individual care of each of your machine washable laundry items – clothing, delicates, linens, blankets, comforters – you name it! Whites, colors, and delicates are separately washed and returned to you fresh, clean and neatly folded and hung on hangers.</p>
         </div>
-        
-      </div>
     </section>
     <section className="how-it-works">
       <h2>HOW IT WORKS: IN 4 EASY STEPS</h2>
@@ -75,7 +69,7 @@ export const Home = () => {
         <img className="pick-up-image" src={Pickup} style={{width:"100%"}}  alt="biker on a motobike" />
       </div>
       <div className="pick-up-box-two">
-        <Link className="btn-primary" to='/login'>schedule Pickup</Link>
+        <Link  className="btn-primary" to='/login'>schedule Pickup</Link>
         <p>scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
         
       </div>

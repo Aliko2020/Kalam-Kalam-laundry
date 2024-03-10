@@ -8,6 +8,7 @@ import { Contact } from "./components/Pages/Contact";
 import { Footer } from "./components/Footer";
 import { Pagenotfound } from "./components/Pages/Pagenotfound";
 import { Login } from "./components/Pages/Login";
+import { SignUp } from "./components/Pages/SignUp";
 import { useState } from "react";
 
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login isLogin={isLogin} />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="*" element={<Pagenotfound />} />
           </Routes>
         </div>

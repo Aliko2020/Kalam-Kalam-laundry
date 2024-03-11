@@ -7,10 +7,24 @@ app.use(cors());
 app.use(express.json()); // Corrected line
 
 const db = mysql.createConnection({
-    host: "", // Make sure to fill in your database host
+    host: "localhost", // Make sure to fill in your database host
     user: "root",
-    password: "Aliko@1734!", // Be cautious with passwords in code!
+    password: "", // Be cautious with passwords in code!
     database: "signup"
+});
+
+app.post('/login', (req, res) => { // Corrected route
+    const sql = "SELECT * FROM login WHERE `email` = ? AND `password` = ?"; // Updated placeholders
+    db.query(sql, [req.body.email, req.body.password], (err, data) => { // Spread the values array
+        if (err) {
+            return res.json({ error: err.message }); // Provide more informative error message
+        }
+        if(data.length > 0){
+            return res.json("success")
+        }else{
+            return res.json("Fialed")
+        }
+    });
 });
 
 app.post('/signup', (req, res) => { // Corrected route
@@ -27,6 +41,7 @@ app.post('/signup', (req, res) => { // Corrected route
         return res.json(data);
     });
 });
+
 
 app.listen(8080, () => {
     console.log("Server is listening on port 4022");

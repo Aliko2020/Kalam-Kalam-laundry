@@ -9,6 +9,7 @@ import { Pagenotfound } from "./components/Pages/Pagenotfound";
 import { Login } from "./components/Pages/Login";
 import { SignUp } from "./components/Pages/SignUp";
 import { useState } from "react";
+import { Dashboard } from "./components/Pages/Dashboard";
 
 
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login isLogin={isLogin} />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<Pagenotfound />} />
           </Routes>
         </div>

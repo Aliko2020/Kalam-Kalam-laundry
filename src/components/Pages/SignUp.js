@@ -9,7 +9,7 @@
     export const SignUp = () => {
       
       const [values, setValues] = useState({
-        username: "",
+        name: "",
         email: "",
         password: ""
     })
@@ -19,7 +19,7 @@
     const handleSubmit = (event) =>{
         event.preventDefault();
         setErrors(ValidationSignup(values));
-
+        console.log(values);
         axios.post('http://localhost:8080/signup',values)
             .then(res => console.log(res))
             .catch(err => console.log(err))
@@ -29,7 +29,7 @@
             
         // }
         setValues({
-            username: "",
+            name: "",
             email: "",
             password: ""
         })
@@ -72,15 +72,15 @@
                             borderRadius: '5px',
                             margin: '1rem 0'
                         }}
-                        value={values.username}
-                        name='username'
+                        value={values.name}
+                        name='name'
                         type='text' 
                         placeholder='John Doe'
                         onChange={handleInput} 
                     />
                     {errors.name && <span style={{color: 'red',margin:'.5rem 0 1rem 0'}}>{errors.name}</span>}
                     
-                    <label htmlFor='username'><strong>Email</strong></label>
+                    <label htmlFor='email'><strong>Email</strong></label>
                         <input 
                             style={{
                                 padding: '1.2rem .2rem',
@@ -88,6 +88,7 @@
                                 margin: '1rem 0'
                             }}
                             value={values.email}
+                            id='email'
                             name='email'
                             type='text' 
                             placeholder='johndoe@gmail.com'

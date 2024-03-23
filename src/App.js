@@ -10,6 +10,7 @@ import { Login } from "./components/Pages/Login";
 import { SignUp } from "./components/Pages/SignUp";
 import { useState } from "react";
 import { Dashboard } from "./components/Pages/Dashboard";
+import { Footer } from "./components/Footer";
 
 
 

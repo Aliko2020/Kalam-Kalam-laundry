@@ -1,14 +1,11 @@
 import React from "react";
 import '../Pages/Home.css'
-import image1 from '../images/image1.jpg';
 import image3 from '../images/image3.png';
-import image7 from '../images/image7.jpg';
 import PNG1 from '../images/Mask-Group-41.png';
 import PNG2 from '../images/Mask-Group-42.png';
 import PNG3 from '../images/Mask-Group-43.png';
 import PNG4 from '../images/Group-218.png';
 import Pickup from '../images/pickup.jpg';
-import image2 from '../images/image2.jpg'
 import { Link } from "react-router-dom";
 
 

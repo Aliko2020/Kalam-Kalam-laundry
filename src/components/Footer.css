@@ -1,0 +1,47 @@
+.footer-container{
+    margin-top: 10rem;
+    background-color: #ff3831;
+    color: rgb(247, 243, 243);
+}
+
+.footer-box{
+    padding: 1rem;
+}
+.footer-box h3{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    
+}
+.footer-box p{
+    line-height:1.5;
+}
+
+.footer-box ul{
+    list-style-type: none;
+    
+}
+.footer-box ul li{
+    margin: 0.2rem 0;
+}
+
+.bottom-box{
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+    padding: 1rem 0;
+}
+@media only screen and (min-width: 850px) {
+    .top-box{
+        margin: 1rem;
+        display: flex;
+        gap: 3rem;
+       
+    }
+    .footer-box{
+        max-width: 450px;
+    }
+    .about{
+        max-width: 650px;
+    }
+
+}

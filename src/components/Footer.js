@@ -1,5 +1,9 @@
 import React from 'react'
 import './Footer.css'
+import { FaMapLocationDot } from "react-icons/fa6";
+import { FaLinkSlash } from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
+
 
 export const Footer = () => {
 
@@ -12,6 +16,7 @@ export const Footer = () => {
       <div className='top-box'>
       <div className='footer-box about'>
         <h3>About</h3>
+        <div className='underline'></div>
         <p>
           In publishing and graphic design, Lorem ipsum is a placeholder text
           commonly used to demonstrate the visual form of a document or a typeface 
@@ -22,19 +27,22 @@ export const Footer = () => {
           Lorem ipsum may be used as a placeholder before the final copy is available.
         </p>
       </div>
+      
       <div className='footer-box'>
-          <h3>Locations</h3>
+          <h3><FaMapLocationDot /> Locations </h3>
+          <div className='underline'></div>
           <ul>
-            <li>Zuarungu</li>
-            <li>Estate</li>
-            <li>Yekeni</li>
-            <li>Zaare</li>
-            <li>Soe</li>
+            <li><FaLocationDot /> Zuarungu</li>
+            <li><FaLocationDot /> Estate</li>
+            <li><FaLocationDot /> Yekeni</li>
+            <li><FaLocationDot /> Zaare</li>
+            <li><FaLocationDot /> Soe</li>
             
           </ul>
       </div>
       <div className='footer-box'>
-        <h3>Links</h3>
+        <h3><FaLinkSlash /> Links</h3>
+        <div className='underline'></div>
         <ul>
           <li>Home</li>
           <li>About</li>
@@ -42,18 +50,13 @@ export const Footer = () => {
           <li>Blog</li>
         </ul>
       </div>
-      <div className='footer-box'>
-        <h3>Get in Touch</h3> 
-        <textarea>
-          
-        </textarea>
+      
+      
       </div>
+      <hr />
       <div className='bottom-box'>
         <p>© {updateYear()} kalam Savana laundry</p>
       </div>
-      </div>
-      <hr />
-      
     </div>
   )
 }

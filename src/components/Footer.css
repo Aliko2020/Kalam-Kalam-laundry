@@ -1,6 +1,6 @@
 .footer-container{
     margin-top: 10rem;
-    background-color: #ff3831;
+    background-color: #316685;
     color: rgb(247, 243, 243);
 }
 
@@ -13,7 +13,7 @@
     
 }
 .footer-box p{
-    line-height:1.5;
+    line-height:1.7;
 }
 
 .footer-box ul{
@@ -21,7 +21,7 @@
     
 }
 .footer-box ul li{
-    margin: 0.2rem 0;
+    margin: .5rem 0;
 }
 
 .bottom-box{
@@ -34,7 +34,7 @@
     .top-box{
         margin: 1rem;
         display: flex;
-        gap: 3rem;
+        justify-content: space-around;
        
     }
     .footer-box{
@@ -44,4 +44,10 @@
         max-width: 650px;
     }
 
+}
+.underline{
+    margin: 1rem 0;
+    width: 120px;
+    height: 10px;
+    background-color: white;
 }

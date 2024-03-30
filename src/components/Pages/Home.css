@@ -75,6 +75,7 @@
  }
 
  .service-description p{
+    text-align: center;
     line-height: 1.8;
  }
 
@@ -90,7 +91,8 @@
         justify-content: center;
     }
     .service-text{
-        max-width:1200px;
+        padding: 1rem;
+        /* max-width:1200px; */
     }
 
     .how-it-works{

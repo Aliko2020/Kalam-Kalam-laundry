@@ -13,12 +13,8 @@ import { Dashboard } from "./components/Pages/Dashboard";
 import { Footer } from "./components/Footer";
 
 
-
-
 function App() {
   const [isLogin, setIsLogin] = useState(false)
-
-
   return (
     <>
       <Router>

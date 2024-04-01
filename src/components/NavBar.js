@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
-import { HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
-import { MdLocalLaundryService } from "react-icons/md";
-
+import {CodeIcon, HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -14,21 +12,19 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-            <MdLocalLaundryService />
-            <span>Savana </span>
+            <span>Kalam <span className="design">Kalam</span></span>
             {/* <i className="fas fa-code"></i> */}
-            {/* <span className="icon">
+            <span className="icon">
               <CodeIcon />
-            </span> */}
-            
+            </span>
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
-                exact=""
+                exact
                 to="/"
-                activeclassname="active"
+                activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -39,7 +35,7 @@ function NavBar() {
               <NavLink
                 exact
                 to="/about"
-                activeclassname="active"
+                activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -50,7 +46,7 @@ function NavBar() {
               <NavLink
                 exact
                 to="/blog"
-                activeclassname="active"
+                activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -60,12 +56,12 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/login"
-                activeclassname="active"
+                to="/contact"
+                activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                schedule Pickup
+                Contact Us
               </NavLink>
             </li>
           </ul>
